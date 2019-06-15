@@ -27,7 +27,6 @@ public class JavaController {
     }
 
     @GetMapping("/exercise/random")
-
     public List<Exercise> mathController(@RequestParam(defaultValue = "3") int amount) {
         int i = ThreadLocalRandom.current().nextInt(db.size());
 

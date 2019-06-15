@@ -1,9 +1,6 @@
 package ru.springboot;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 import ru.sprincloud.common.Section;
 
@@ -11,9 +8,10 @@ import java.util.List;
 
 @Data
 @Builder
-@Accessors(chain = true)
+@Accessors(fluent = true)
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExamResponse {
+    @Singular
     private List<Section> sections;
 }

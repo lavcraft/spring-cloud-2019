@@ -10,6 +10,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Section {
+    private String title;
     @Singular
     private List<Exercise> exercises;
 }
