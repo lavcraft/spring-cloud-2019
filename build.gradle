@@ -51,10 +51,11 @@ configure([
         project(':eureka-server')
 ]) {
     apply plugin: 'org.springframework.boot'
-    
+
     dependencies {
         implementation project(':common')
         implementation 'org.springframework.boot:spring-boot-starter-web',
+                'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client',
                 'org.springframework.boot:spring-boot-starter-actuator'
     }
 }

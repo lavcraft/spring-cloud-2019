@@ -2,3 +2,9 @@ exam:
   service-name-to-url:
     java: http://localhost:8082
     math: http://localhost:8081
+
+spring.application.name: examinator
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5671/eureka
