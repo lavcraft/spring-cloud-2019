@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Builder
-@Accessors(fluent = true)
+@Accessors(chain= true)
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExamResponse {
