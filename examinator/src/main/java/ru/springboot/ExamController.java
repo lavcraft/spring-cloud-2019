@@ -18,7 +18,7 @@ import static java.util.Arrays.asList;
 @RestController
 @RequiredArgsConstructor
 public class ExamController {
-    private final RestTemplate   restTemplate;
+    private final RestTemplate restTemplate;
 
     @PostMapping("/exam")
     public ExamResponse exam(@RequestBody Map<String, Integer> examSpec) {
