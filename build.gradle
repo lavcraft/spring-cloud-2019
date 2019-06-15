@@ -20,7 +20,7 @@ subprojects {
     dependencies {
         [ //dependency management
           enforcedPlatform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES),
-//          platform('org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE'),
+          platform('org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE'),
 //          platform('org.springframework.cloud:spring-cloud-bus:2.1.1.RELEASE'),
           platform('org.junit:junit-bom:5.4.1'),
         ].each {
@@ -47,8 +47,11 @@ subprojects {
 configure([
         project(':examinator'),
         project(':java'),
-        project(':math')
+        project(':math'),
+        project(':eureka-server')
 ]) {
+    apply plugin: 'org.springframework.boot'
+    
     dependencies {
         implementation project(':common')
         implementation 'org.springframework.boot:spring-boot-starter-web',
