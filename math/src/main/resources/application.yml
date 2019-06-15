@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+math.max: 100
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

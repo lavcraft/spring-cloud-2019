@@ -45,10 +45,13 @@ subprojects {
 }
 
 configure([
-        project(':examinator')
+        project(':examinator'),
+        project(':java'),
+        project(':math')
 ]) {
     dependencies {
-        implementation 'org.springframework.boot:spring-boot-starter-webflux',
+        implementation project(':common')
+        implementation 'org.springframework.boot:spring-boot-starter-web',
                 'org.springframework.boot:spring-boot-starter-actuator'
     }
 }

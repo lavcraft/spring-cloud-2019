@@ -14,5 +14,6 @@ fileTree('.') {
 }.each {
 	include it
 }
-include 'examinator'
+include 'common'
+include 'java'
 
