@@ -48,7 +48,8 @@ configure([
         project(':examinator'),
         project(':java'),
         project(':math'),
-        project(':eureka-server')
+        project(':eureka-server'),
+        project(':config-server')
 ]) {
     apply plugin: 'org.springframework.boot'
 
@@ -56,6 +57,7 @@ configure([
         implementation project(':common')
         implementation 'org.springframework.boot:spring-boot-starter-web',
                 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client',
+                'org.springframework.cloud:spring-cloud-starter-config',
                 'org.springframework.boot:spring-boot-starter-actuator'
     }
 }

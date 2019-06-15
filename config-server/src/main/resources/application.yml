@@ -1,0 +1,18 @@
+server:
+  port: 0
+
+eureka:
+  instance:
+    instance-id: ${random.long}
+  client:
+    service-url:
+      defaultZone: http://localhost:5671/eureka
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lavcraft/configproperties.git

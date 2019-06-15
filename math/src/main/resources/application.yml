@@ -9,8 +9,4 @@ management:
       exposure:
         include: '*'
 
-spring.application.name: math
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:5671/eureka
+
