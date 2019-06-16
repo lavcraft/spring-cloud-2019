@@ -1,6 +1,7 @@
 package ru.springcloud.math;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +13,15 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 @RestController
-@RequiredArgsConstructor
+@RefreshScope
 public class MathController {
-    private final MathProperties mathProperties;
+    @Value("${math.max}")
+    private int max;
 
     @GetMapping("/exercise/random")
     public List<Exercise> mathController(@RequestParam(defaultValue = "3") int amount) {
-        int i = ThreadLocalRandom.current().nextInt(0, mathProperties.getMax());
-        int j = ThreadLocalRandom.current().nextInt(0, mathProperties.getMax());
+        int i = getRandom();
+        int j = getRandom();
         return IntStream.range(0, amount)
                 .mapToObj(value -> Exercise.builder()
                         .question(i + " + " + j + " = ?")
@@ -27,5 +29,9 @@ public class MathController {
                         .build())
                 .collect(Collectors.toList());
 
+    }
+
+    private int getRandom() {
+        return ThreadLocalRandom.current().nextInt(0, max);
     }
 }
